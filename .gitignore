@@ -11,4 +11,10 @@ artifacts
 
 # deployment files
 deployment.json
+*.json.backup
 
+# gas reports
+gas-report.txt
+
+# logs
+*.log

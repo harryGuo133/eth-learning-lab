@@ -2,16 +2,39 @@
 
 English | [简体中文](./README.md)
 
-A complete local Ethereum blockchain environment for learning and development, powered by Ganache CLI and ethers.js.
+A complete local Ethereum blockchain environment for learning and development, powered by Hardhat + Ganache v7 + ethers.js.
+
+## 🛠️ Tech Stack
+
+- **Hardhat v2.19.5** - Ethereum development environment
+- **Ganache v7.9.2** - Local blockchain node (supports latest EVM)
+- **ethers.js v5.7.2** - Ethereum JavaScript library
+- **Solidity 0.8.20** - Smart contract language
+- **Mocha + Chai** - Testing framework
 
 ## 📋 Prerequisites
 
-- Node.js (v12 or higher)
-- npm
+- Node.js (v20 or higher) - **Recommended v20 LTS**
+- npm (v10+)
 
 ## 🚀 Quick Start
 
-### 1. Install Dependencies
+### 1. Setup Node.js Version
+
+This project requires Node.js v20+. If you don't have it, use nvm:
+
+```bash
+# Install nvm (if not already installed)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+
+# Install and use Node.js 20
+nvm install 20
+nvm use 20
+nvm alias default 20
+```
+
+### 2. Install Dependencies
 
 ```bash
 make install
@@ -19,7 +42,7 @@ make install
 npm install
 ```
 
-### 2. Start Local Ethereum Node
+### 3. Start Local Ethereum Node
 
 Run in one terminal window:
 
@@ -27,7 +50,7 @@ Run in one terminal window:
 make node
 ```
 
-This will start a local Ethereum node (Ganache):
+This will start a local Ethereum node (Ganache v7):
 - **RPC URL**: `http://127.0.0.1:8545`
 - **Chain ID**: `1337`
 - Automatically generates 10 test accounts with 10,000 ETH each
@@ -36,7 +59,7 @@ This will start a local Ethereum node (Ganache):
 
 The node will display all available accounts and their private keys upon startup.
 
-### 3. View Account Information
+### 4. View Account Information
 
 In another terminal window:
 
@@ -44,7 +67,7 @@ In another terminal window:
 make accounts
 ```
 
-### 4. Compile Contracts
+### 5. Compile Contracts
 
 ```bash
 make compile
@@ -52,7 +75,7 @@ make compile
 
 This generates ABI and bytecode, saved in the `artifacts/` directory.
 
-### 5. Deploy Contracts
+### 6. Deploy Contracts
 
 Make sure the node is running, then:
 
@@ -65,7 +88,7 @@ This will:
 - Set initial value to 42
 - Save contract address to `deployment.json`
 
-### 6. Interact with Contract
+### 7. Interact with Contract
 
 ```bash
 make interact
