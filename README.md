@@ -1,5 +1,7 @@
 # 以太坊本地开发节点
 
+[English](./README.en.md) | 简体中文
+
 这是一个用于学习和开发的本地以太坊区块链节点环境，使用 Ganache CLI 和 ethers.js。
 
 ## 📋 前置要求
