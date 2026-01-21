@@ -1,0 +1,26 @@
+{
+  "name": "eth-local-node",
+  "version": "1.0.0",
+  "description": "本地以太坊开发节点",
+  "main": "index.js",
+  "scripts": {
+    "node": "ganache-cli --port 8545 --networkId 1337 --gasLimit 12000000 --accounts 10 --defaultBalanceEther 10000 --mnemonic 'test test test test test test test test test test test junk'",
+    "compile": "solcjs --bin --abi --include-path node_modules/ --base-path . -o artifacts contracts/*.sol",
+    "deploy": "node scripts/deploy.js",
+    "interact": "node scripts/interact.js",
+    "accounts": "node scripts/accounts.js",
+    "test": "echo 'Tests not configured yet'"
+  },
+  "keywords": ["ethereum", "blockchain", "hardhat"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "ganache-cli": "^6.12.2",
+    "solc": "^0.8.0"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "solc": "^0.8.0"
+  }
+}
+
